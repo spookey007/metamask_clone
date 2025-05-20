@@ -1,0 +1,60 @@
+.model-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.02) 100%);
+  z-index: -1;
+  pointer-events: none;
+  background-color: #fff1eb;
+}
+
+.model-canvas {
+  background: transparent;
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
+  position: relative;
+
+  pointer-events: auto;
+}
+
+/* Add a subtle glow effect */
+.model-canvas::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .model-container {
+    height: 100vh;
+  }
+  
+  .model-canvas {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .model-container {
+    height: 100vh;
+  }
+  
+  .model-canvas {
+    max-width: 100%;
+  }
+} 

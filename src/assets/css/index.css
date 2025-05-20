@@ -1,0 +1,380 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "Work Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MetaMask';
+  src: url('/src/assets/fonts/metamask.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MetaMaskModern';
+  src: url('/src/assets/fonts/metamask_modern.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MetaMaskGeneral';
+  src: url('/src/assets/fonts/metamask_general.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @media (min-width: 2560px) {
+  body {
+    max-width: 2560px;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+} */
+
+
+
+
+:root {
+  /* Improved Font & Smoothing */
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: small;
+  /* Improved Container Sizing */
+  max-width: 100%;
+  margin: 0 auto;
+
+  
+  /* Enhanced Scroll Behavior */
+  scroll-behavior: smooth;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    background-color: #121212;
+    color: #e0e0e0;
+  } */
+
+  a {
+    color: #909cff;
+  }
+
+  a:hover {
+    color: #7c82e0;
+  }
+}
+
+/* Loader styles */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #6f42c1;
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.loader-content {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-text {
+  font-family: 'MetaMaskModern', sans-serif;
+  font-size: 12.5rem;
+  color: #000 !important;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  -webkit-text-fill-color: #000;
+}
+
+/* Reset body margin and padding for loader */
+body.loading {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Home page styles */
+.home {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+
+}
+
+.hero {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  /* position: relative; */
+
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(111, 66, 193, 0.05) 0%, transparent 70%);
+
+}
+
+.cheader{
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.web3-title {
+  font-family: 'MetaMask', 'Bungee', 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 12.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  color: #3d065f;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  text-shadow: none;
+  position: relative;
+
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .web3-title {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .web3-title {
+    font-size: 3rem;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Loader logo style */
+.loader-logo {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero .view-metamask-btn {
+  margin-top: 32px;
+  padding: 18px 40px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.hero .view-metamask-btn:hover {
+  background: #3d065f;
+  color: #fff1eb;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Desktop Header styles */
+/* .desktop-header {
+  margin: 20px 20px 20px 50px ;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #3d065f;
+}
+
+.cta-button {
+  background: #111;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cta-button:hover {
+  background: #3d065f;
+}
+
+/* MetaMask Font Settings */
+.font-mm-poly-variable {
+  --variable-font-wdth: 20;
+  --variable-font-reso: 5;
+  font-family: var(--font-mm-poly-variable);
+  font-variation-settings: "wdth" var(--variable-font-wdth), "RESO" var(--variable-font-reso);
+}
+
+/* Home page styles */
+.web3-title {
+  font-family: 'MetaMask', 'Bungee', 'Space Grotesk', sans-serif;
+  font-size: 12.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 48px;
+  color: #3d065f;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  text-shadow: none;
+  position: relative;
+  z-index: 1;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .web3-title {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .web3-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-header {
+    padding: 8px 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
