@@ -378,3 +378,43 @@ body.loading {
     gap: 10px;
   }
 }
+
+/* Responsive margin for hero section */
+.responsive-margin {
+  margin-top: 15vh; /* Default for large screens */
+}
+
+/* For tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+  .responsive-margin {
+    margin-top: 12vh;
+  }
+}
+
+/* For tablets */
+@media screen and (max-width: 768px) {
+  .responsive-margin {
+    margin-top: 10vh;
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+  .responsive-margin {
+    margin-top: 0vh;
+  }
+}
+
+/* For very small mobile devices */
+@media screen and (max-width: 320px) {
+  .responsive-margin {
+    margin-top: 0vh;
+  }
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .responsive-margin {
+    margin-top: 0vh;
+  }
+}

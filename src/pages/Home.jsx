@@ -67,7 +67,6 @@ const Home = () => {
           <motion.h1
             variants={itemVariants}
             style={{
-              marginTop: '15vh',
               textDecoration: 'none',
               display: 'flex',
               justifyContent: 'center',
@@ -77,7 +76,7 @@ const Home = () => {
               textAlign: 'center',
               position: 'relative'
             }}
-            className="web3-title font-mm-poly-variable"
+            className="web3-title font-mm-poly-variable responsive-margin"
           >
             Your home in web3
           </motion.h1>
