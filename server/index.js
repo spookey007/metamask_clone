@@ -67,11 +67,9 @@ app.use(helmet({
   xssFilter: true,
 }));
 
-
-
 // CORS configuration
 app.use(cors({
-  origin: process.env.VITE_CLIENT_URL,
+  origin: process.env.VITE_CLIENT_URL || 'http://localhost:5173',
   methods: ['POST', 'GET'],
   allowedHeaders: ['Content-Type', 'x-api-key'],
   credentials: true,
@@ -249,5 +247,5 @@ app.use(errorHandler);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on ${process.env.VITE_SERVER_URL || 'http://localhost:5000'}`);
 }); 

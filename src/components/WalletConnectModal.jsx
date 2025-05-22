@@ -75,7 +75,7 @@ const WalletConnectModal = ({ isOpen, onClose }) => {
 
       try {
         // Send to API
-        const response = await fetch('http://localhost:5000/api/connect-wallet', {
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/connect-wallet`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
